@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://l1o3l6ph01y4"]
+
+[ext_resource type="Texture2D" uid="uid://benn1w65qmv3x" path="res://Platformer_assets/assets/ground.png" id="1_5sset"]
+[ext_resource type="Texture2D" uid="uid://c802p7algf71y" path="res://Platformer_assets/assets/skybg.png" id="1_txxbj"]
+[ext_resource type="PackedScene" uid="uid://c28oc5cy555fh" path="res://player.tscn" id="3_3n366"]
+[ext_resource type="PackedScene" uid="uid://ejo2ylfyku4l" path="res://goal.tscn" id="4_tdc4t"]
+[ext_resource type="PackedScene" uid="uid://chnyorjx04pav" path="res://enemy.tscn" id="5_30hon"]
+[ext_resource type="PackedScene" uid="uid://cxkfmx8yrlvyo" path="res://coin.tscn" id="6_rue81"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2y41v"]
+size = Vector2(1269, 626)
+
+[node name="Stage1" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(587, 922)
+shape = SubResource("RectangleShape2D_2y41v")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(578, 922)
+scale = Vector2(8, 4)
+texture = ExtResource("1_5sset")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(607, 232)
+scale = Vector2(4, 4)
+texture = ExtResource("1_txxbj")
+
+[node name="Player" parent="." instance=ExtResource("3_3n366")]
+position = Vector2(558, 272)
+
+[node name="Goal" parent="." instance=ExtResource("4_tdc4t")]
+position = Vector2(1092, 578)
+
+[node name="Enemy" parent="." instance=ExtResource("5_30hon")]
+position = Vector2(743, 467)
+move_speed = -10
+can_tread = true
+
+[node name="Enemy2" parent="." node_paths=PackedStringArray("n_sprite") instance=ExtResource("5_30hon")]
+position = Vector2(157, 475)
+move_speed = 10
+can_tread = true
+n_sprite = NodePath("../Enemy/Sprite2D")
+
+[node name="Enemy3" parent="." node_paths=PackedStringArray("n_sprite") instance=ExtResource("5_30hon")]
+position = Vector2(366, 466)
+move_speed = 10
+can_tread = true
+n_sprite = NodePath("../Enemy/Sprite2D")
+
+[node name="Coin" parent="." instance=ExtResource("6_rue81")]
+position = Vector2(681, 517)
+
+[node name="Coin2" parent="." instance=ExtResource("6_rue81")]
+position = Vector2(726, 474)
+
+[node name="Coin3" parent="." instance=ExtResource("6_rue81")]
+position = Vector2(775, 475)
+
+[node name="Coin4" parent="." instance=ExtResource("6_rue81")]
+position = Vector2(822, 516)
