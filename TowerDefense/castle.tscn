@@ -47,3 +47,5 @@ theme_override_styles/background = SubResource("StyleBoxFlat_kj6hr")
 theme_override_styles/fill = SubResource("StyleBoxFlat_gygi4")
 value = 100.0
 show_percentage = false
+
+[connection signal="area_entered" from="CastleArea" to="." method="_on_castle_area_area_entered"]

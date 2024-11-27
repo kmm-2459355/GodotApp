@@ -21,7 +21,7 @@ offset_bottom = 265.0
 texture = ExtResource("2_w6orq")
 
 [node name="EnemyTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 0.387
 autostart = true
 
 [node name="HUD" parent="." instance=ExtResource("3_58y8s")]

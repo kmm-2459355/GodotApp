@@ -37,3 +37,7 @@ func hide_lose():
 # ボタンが押された
 func _on_button_pressed():
 	launch.emit()
+
+
+func _on_launch():
+	pass # Replace with function body.

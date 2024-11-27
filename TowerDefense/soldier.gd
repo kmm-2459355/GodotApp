@@ -15,7 +15,7 @@ var n_sound
 @export var attack : float = 1
 @export var defense : float = 0
 @export var cost    : int  =50 # 生成するのに必要なスコア
-@export var reload_time : float =1 # 生成したあとのインターバル時間
+@export var reload_time : float =0 # 生成したあとのインターバル時間
 @export var attack_time : float =0.1 # SoldierAttackAreaが有効な時間
 @export var attack_rate : float =0.7
 @export var attack_frame : float =4
