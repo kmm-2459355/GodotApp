@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnxpsw8egc7q7"]
+
+[ext_resource type="Script" path="res://EnemyAnchor.gd" id="1_l5q4t"]
+
+[node name="EnemyAnchor" type="Node2D"]
+script = ExtResource("1_l5q4t")
